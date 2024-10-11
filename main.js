@@ -10,7 +10,7 @@ const ambientLight = new THREE.AmbientLight(0xffffff, 10) //Color blanco
 scene.add(ambientLight);
 
 const directionalLight = new THREE.DirectionalLight(0xffffff, 10) //Color blanco
-directionalLight.position.set(5,10,7.5);
+directionalLight.position.set(5,10,7.5,);
 scene.add(directionalLight);
 
 const renderer = new THREE.WebGLRenderer();
@@ -22,13 +22,13 @@ const controls = new OrbitControls( camera, renderer.domElement );
 const geometry = new THREE.BoxGeometry( 1, 1, 1 );
 const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 const cube = new THREE.Mesh( geometry, material );
-scene.add( cube );
+// scene.add( cube );
 
 
 let model
 
 const loader = new GLTFLoader();
-loader.load('/Laptop.glb', (gltf) => {
+loader.load('/65-lowpolyboy/ejemploCuenpo.glb', (gltf) => {// /home/jhonhernandez/Documents/MUSCLEWIKI3D/
     model = gltf.scene;
     scene.add(model);
 })
